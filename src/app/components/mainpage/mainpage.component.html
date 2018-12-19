@@ -1,0 +1,27 @@
+<div>
+<h3>select the page loading time</h3>
+<select id="time" [(ngModel)]="svalue" (change)="setTimeRange($event)">
+ <option *ngFor="let time of timeRange"  value={{time.id}}>{{time.value}}</option>
+</select>
+  </div>
+
+  <div>
+    {{mintime}}<input type="range" id="range" name="timerange" [(ngModel)]="timerpoint" [min]="mintime" [max]="maxtime" >{{maxtime}}
+  </div>
+{{timerpoint}}
+
+<div>
+<label >
+          <input type="checkbox"  name="loadingtime" 
+          [(ngModel)]="loadingTimeEnable">
+          Enable/disable loadingtime
+        </label>
+</div>
+
+<div>
+<button type="submit" (click)="loadpage()">SUBMIT</button>
+</div>
+
+<div>
+{{showPage}}
+  <div>
